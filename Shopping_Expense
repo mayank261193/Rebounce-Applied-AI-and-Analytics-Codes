@@ -1,0 +1,15 @@
+# Given a price list and a cart, write a function cart_total(cart, prices) that adds up the cost of everything in the cart. Skip (and print a warning for) any item not found in the price list
+#-----------------Code-----------------------
+def cart_total(cart, prices):
+    total = 0
+    for item in cart:
+        if item in prices:
+            total += prices[item]
+        else:
+            print(f"'{item}' not found in price list, skipping")
+    return total
+
+prices = {"bread": 40, "milk": 25, "eggs": 60, "rice": 90}
+cart   = ["bread", "milk", "butter", "rice"]
+
+print(f"Total: {cart_total(cart, prices)}")
